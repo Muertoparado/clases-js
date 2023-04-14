@@ -1,5 +1,6 @@
 {
     "conventionalCommits.scopes": [
-        "clase js "
+        "clase js ",
+        "formato tabla pero no agrega dato"
     ]
 }

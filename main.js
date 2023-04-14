@@ -22,16 +22,27 @@ class lapiz{
     getMarca(){
         return this.marca;
     } */
+
+    getData(){
+    return this;
+    }
 }
 let obj=undefined;
 let color = document.querySelector(`[name="color"]`);
+color.addEventListener("change",data)
 let range = document.querySelector(`[name="dimension"]`);
+range.addEventListener("change",data)
 let marca = document.querySelector(`[name="marca"]`);
+marca.addEventListener("change",data)
 let borrador = document.querySelector(`[name="borrador"]`);
+borrador.addEventListener("change",data)
 let material = document.querySelector(`[name="material"]`);
+material.addEventListener("change",data)
+let boton = document.getElementById("#boton");
+/* let boton = checked = true; */
 
 /* let dato=obj.getData(); */
-range.value=true
+    range.value=true
     marca.checked=true
     borrador.checked=true;
     material.checked=true;
@@ -44,8 +55,26 @@ addEventListener("DOMContentLoaded", (e)=>{
     marca.value = obj.marca;
     material.value = obj.material;
 
-    document.querySelector("#tabla").innerHTML
-   
+   let boton=document.addEventListener("submit",(e)=>{
+        e.preventDefault();
+
+    document.querySelector("#tabla").insertAdjacentHTML("beforeend",
+    `   <tr>
+            <th>${lapiz.color}</th>
+            <th>${lapiz.dimension}</th>
+            <th>${lapiz.marca}</th>
+            <th>${lapiz.borrador}</th>
+            <th>${lapiz.material}</th>
+        </tr>
+    `
+    )
+})
 });
+
+function data(e) {
+    console.log(e.target.value);
+    info[e.target.name] = e.target.value;
+    console.log(info);
+}
 
 
